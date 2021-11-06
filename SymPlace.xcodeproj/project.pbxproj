@@ -11,6 +11,12 @@
 		26252A102736E34800DC7BBC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A0F2736E34800DC7BBC /* ContentView.swift */; };
 		26252A122736E34A00DC7BBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26252A112736E34A00DC7BBC /* Assets.xcassets */; };
 		26252A152736E34A00DC7BBC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26252A142736E34A00DC7BBC /* Preview Assets.xcassets */; };
+		26252A1E2736E38200DC7BBC /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A1D2736E38200DC7BBC /* UserManager.swift */; };
+		26252A202736E38A00DC7BBC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A1F2736E38A00DC7BBC /* LocationManager.swift */; };
+		26252A222736E6BD00DC7BBC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A212736E6BD00DC7BBC /* User.swift */; };
+		26252A242736E6C300DC7BBC /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A232736E6C300DC7BBC /* Gender.swift */; };
+		26252A262736E6C900DC7BBC /* Sexuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A252736E6C900DC7BBC /* Sexuality.swift */; };
+		26252A282736E6CF00DC7BBC /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A272736E6CF00DC7BBC /* Race.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		26252A0F2736E34800DC7BBC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		26252A112736E34A00DC7BBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26252A142736E34A00DC7BBC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		26252A1D2736E38200DC7BBC /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		26252A1F2736E38A00DC7BBC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		26252A212736E6BD00DC7BBC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		26252A232736E6C300DC7BBC /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		26252A252736E6C900DC7BBC /* Sexuality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sexuality.swift; sourceTree = "<group>"; };
+		26252A272736E6CF00DC7BBC /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +63,8 @@
 		26252A0C2736E34800DC7BBC /* SymPlace */ = {
 			isa = PBXGroup;
 			children = (
-				26252A0D2736E34800DC7BBC /* SymPlaceApp.swift */,
-				26252A0F2736E34800DC7BBC /* ContentView.swift */,
+				26252A1C2736E37400DC7BBC /* Controllers */,
+				26252A1B2736E36900DC7BBC /* Views */,
 				26252A112736E34A00DC7BBC /* Assets.xcassets */,
 				26252A132736E34A00DC7BBC /* Preview Content */,
 			);
@@ -65,6 +77,36 @@
 				26252A142736E34A00DC7BBC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		26252A1B2736E36900DC7BBC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				26252A0F2736E34800DC7BBC /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		26252A1C2736E37400DC7BBC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				26252A0D2736E34800DC7BBC /* SymPlaceApp.swift */,
+				26252A2A2736E6E200DC7BBC /* Users */,
+				26252A1F2736E38A00DC7BBC /* LocationManager.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		26252A2A2736E6E200DC7BBC /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				26252A1D2736E38200DC7BBC /* UserManager.swift */,
+				26252A212736E6BD00DC7BBC /* User.swift */,
+				26252A232736E6C300DC7BBC /* Gender.swift */,
+				26252A252736E6C900DC7BBC /* Sexuality.swift */,
+				26252A272736E6CF00DC7BBC /* Race.swift */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +179,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26252A282736E6CF00DC7BBC /* Race.swift in Sources */,
+				26252A242736E6C300DC7BBC /* Gender.swift in Sources */,
+				26252A202736E38A00DC7BBC /* LocationManager.swift in Sources */,
+				26252A1E2736E38200DC7BBC /* UserManager.swift in Sources */,
 				26252A102736E34800DC7BBC /* ContentView.swift in Sources */,
+				26252A262736E6C900DC7BBC /* Sexuality.swift in Sources */,
+				26252A222736E6BD00DC7BBC /* User.swift in Sources */,
 				26252A0E2736E34800DC7BBC /* SymPlaceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
