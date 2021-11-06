@@ -14,9 +14,16 @@
 		26252A1E2736E38200DC7BBC /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A1D2736E38200DC7BBC /* UserManager.swift */; };
 		26252A202736E38A00DC7BBC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A1F2736E38A00DC7BBC /* LocationManager.swift */; };
 		26252A222736E6BD00DC7BBC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A212736E6BD00DC7BBC /* User.swift */; };
-		26252A242736E6C300DC7BBC /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A232736E6C300DC7BBC /* Gender.swift */; };
-		26252A262736E6C900DC7BBC /* Sexuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A252736E6C900DC7BBC /* Sexuality.swift */; };
-		26252A282736E6CF00DC7BBC /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A272736E6CF00DC7BBC /* Race.swift */; };
+		26252A2E2736EB8100DC7BBC /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A2D2736EB8100DC7BBC /* NotificationManager.swift */; };
+		26252A312736EE8200DC7BBC /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A302736EE8200DC7BBC /* MainScreen.swift */; };
+		26252A332736EE8A00DC7BBC /* NewUserScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A322736EE8A00DC7BBC /* NewUserScreen.swift */; };
+		26252A352736EE9500DC7BBC /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A342736EE9500DC7BBC /* OnboardingScreen.swift */; };
+		26252A372736EFEA00DC7BBC /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A362736EFEA00DC7BBC /* OnboardingController.swift */; };
+		26252A392736F58400DC7BBC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A382736F58400DC7BBC /* ProfileView.swift */; };
+		26252A3C2736F76F00DC7BBC /* SymTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A3B2736F76F00DC7BBC /* SymTextField.swift */; };
+		26252A3E2736F81400DC7BBC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A3D2736F81400DC7BBC /* Colors.swift */; };
+		26252A422737037E00DC7BBC /* InformationCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A412737037E00DC7BBC /* InformationCollection.swift */; };
+		26252A44273705FA00DC7BBC /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A43273705FA00DC7BBC /* Loader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,9 +35,18 @@
 		26252A1D2736E38200DC7BBC /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		26252A1F2736E38A00DC7BBC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		26252A212736E6BD00DC7BBC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		26252A232736E6C300DC7BBC /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
-		26252A252736E6C900DC7BBC /* Sexuality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sexuality.swift; sourceTree = "<group>"; };
-		26252A272736E6CF00DC7BBC /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
+		26252A2B2736EA3F00DC7BBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		26252A2C2736EADA00DC7BBC /* SymPlace.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SymPlace.entitlements; sourceTree = "<group>"; };
+		26252A2D2736EB8100DC7BBC /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		26252A302736EE8200DC7BBC /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		26252A322736EE8A00DC7BBC /* NewUserScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserScreen.swift; sourceTree = "<group>"; };
+		26252A342736EE9500DC7BBC /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
+		26252A362736EFEA00DC7BBC /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
+		26252A382736F58400DC7BBC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		26252A3B2736F76F00DC7BBC /* SymTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymTextField.swift; sourceTree = "<group>"; };
+		26252A3D2736F81400DC7BBC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		26252A412737037E00DC7BBC /* InformationCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCollection.swift; sourceTree = "<group>"; };
+		26252A43273705FA00DC7BBC /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +79,8 @@
 		26252A0C2736E34800DC7BBC /* SymPlace */ = {
 			isa = PBXGroup;
 			children = (
+				26252A2C2736EADA00DC7BBC /* SymPlace.entitlements */,
+				26252A2B2736EA3F00DC7BBC /* Info.plist */,
 				26252A1C2736E37400DC7BBC /* Controllers */,
 				26252A1B2736E36900DC7BBC /* Views */,
 				26252A112736E34A00DC7BBC /* Assets.xcassets */,
@@ -82,7 +100,11 @@
 		26252A1B2736E36900DC7BBC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				26252A3A2736F75A00DC7BBC /* Utilities */,
+				26252A2F2736EE7500DC7BBC /* User */,
 				26252A0F2736E34800DC7BBC /* ContentView.swift */,
+				26252A302736EE8200DC7BBC /* MainScreen.swift */,
+				26252A342736EE9500DC7BBC /* OnboardingScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -93,6 +115,8 @@
 				26252A0D2736E34800DC7BBC /* SymPlaceApp.swift */,
 				26252A2A2736E6E200DC7BBC /* Users */,
 				26252A1F2736E38A00DC7BBC /* LocationManager.swift */,
+				26252A2D2736EB8100DC7BBC /* NotificationManager.swift */,
+				26252A362736EFEA00DC7BBC /* OnboardingController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -102,11 +126,28 @@
 			children = (
 				26252A1D2736E38200DC7BBC /* UserManager.swift */,
 				26252A212736E6BD00DC7BBC /* User.swift */,
-				26252A232736E6C300DC7BBC /* Gender.swift */,
-				26252A252736E6C900DC7BBC /* Sexuality.swift */,
-				26252A272736E6CF00DC7BBC /* Race.swift */,
 			);
 			path = Users;
+			sourceTree = "<group>";
+		};
+		26252A2F2736EE7500DC7BBC /* User */ = {
+			isa = PBXGroup;
+			children = (
+				26252A322736EE8A00DC7BBC /* NewUserScreen.swift */,
+				26252A382736F58400DC7BBC /* ProfileView.swift */,
+				26252A412737037E00DC7BBC /* InformationCollection.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		26252A3A2736F75A00DC7BBC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				26252A3B2736F76F00DC7BBC /* SymTextField.swift */,
+				26252A3D2736F81400DC7BBC /* Colors.swift */,
+				26252A43273705FA00DC7BBC /* Loader.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,14 +220,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26252A282736E6CF00DC7BBC /* Race.swift in Sources */,
-				26252A242736E6C300DC7BBC /* Gender.swift in Sources */,
+				26252A332736EE8A00DC7BBC /* NewUserScreen.swift in Sources */,
+				26252A312736EE8200DC7BBC /* MainScreen.swift in Sources */,
 				26252A202736E38A00DC7BBC /* LocationManager.swift in Sources */,
+				26252A2E2736EB8100DC7BBC /* NotificationManager.swift in Sources */,
+				26252A3C2736F76F00DC7BBC /* SymTextField.swift in Sources */,
+				26252A372736EFEA00DC7BBC /* OnboardingController.swift in Sources */,
 				26252A1E2736E38200DC7BBC /* UserManager.swift in Sources */,
+				26252A3E2736F81400DC7BBC /* Colors.swift in Sources */,
 				26252A102736E34800DC7BBC /* ContentView.swift in Sources */,
-				26252A262736E6C900DC7BBC /* Sexuality.swift in Sources */,
+				26252A352736EE9500DC7BBC /* OnboardingScreen.swift in Sources */,
+				26252A422737037E00DC7BBC /* InformationCollection.swift in Sources */,
 				26252A222736E6BD00DC7BBC /* User.swift in Sources */,
+				26252A392736F58400DC7BBC /* ProfileView.swift in Sources */,
 				26252A0E2736E34800DC7BBC /* SymPlaceApp.swift in Sources */,
+				26252A44273705FA00DC7BBC /* Loader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,12 +362,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SymPlace/SymPlace.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SymPlace/Preview Content\"";
 				DEVELOPMENT_TEAM = 5RD23JCCKU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SymPlace/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -343,12 +393,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SymPlace/SymPlace.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SymPlace/Preview Content\"";
 				DEVELOPMENT_TEAM = 5RD23JCCKU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SymPlace/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

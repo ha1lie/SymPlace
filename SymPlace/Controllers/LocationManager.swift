@@ -22,4 +22,8 @@ class LocationManager {
     public func getUserLocations() {
         
     }
+    
+    public func launchSetup() {
+        print("LOCATION MANAGER LAUNCH SETUP RUNNING")
+    }
 }

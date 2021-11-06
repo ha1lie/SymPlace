@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var onboardController: OnboardingController = .shared
+    @ObservedObject var userManager: UserManager = .shared
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        if self.onboardController.hasOnboarded {
+            if self.userManager.currentUser == nil {
+                NewUserScreen()
+            } else {
+                MainScreen()
+            }
+        } else {
+            OnboardingScreen()
+        }
     }
 }
 
