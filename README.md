@@ -1,3 +1,8 @@
+# SymPlace
+_** A safe space discovery app for everyone!**_
+
+**View the promo video [here](https://youtu.be/wKpznGX4PWU)!**
+
 ## Inspiration
 Every day, minorities across the globe face the problem of aggressions, both micro and macro, for just being who they are. I myself am a trans woman, and I often find myself wishing I knew of places in my area that would be accepting of me, and that I would feel comfortable in. I know that everyone from people of color to queer couples feel the same as well. 
 
