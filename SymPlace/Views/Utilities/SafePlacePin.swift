@@ -11,11 +11,14 @@ import CoreLocation
 
 struct SafePlacePin: View {
     
-    @Environment(\.colorScheme) var darkMode
-    
     let safePlace: SafePlace
     
     @State var showDetail: Bool = false
+    
+    func fuckOffSheet() {
+        self.showDetail = false
+        InformationManager.shared.presentReviewForPlace(self.safePlace, isUpdate: true)
+    }
     
     var body: some View {
         Button {
@@ -23,16 +26,18 @@ struct SafePlacePin: View {
         } label: {
             ZStack {
                 Image(systemName: "circle.fill")
-                    .foregroundColor(self.darkMode == .dark ? .white : .black)
+                    .foregroundColor(.white)
                     .font(.system(size: 35))
                 Image(systemName: "pin.fill")
-                    .foregroundColor(self.darkMode == .dark ? appPurple : appOrange)
+                    .foregroundColor(appPurple)
                     .font(.system(size: 20))
             }
         }.buttonStyle(PlainButtonStyle()).sheet(isPresented: self.$showDetail) {
             self.showDetail = false
         } content: {
-            SafePlaceView(safePlace: self.safePlace)
+            SafePlaceView(safePlace: self.safePlace) {
+                self.fuckOffSheet()
+            }
         }
 
     }

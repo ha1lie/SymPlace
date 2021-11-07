@@ -16,11 +16,8 @@ class OnboardingController: ObservableObject {
     private let onboardingFinishedDefaults: String = "onboardingComplete"
     
     func finishOnboarding() {
-        print("IS FINISHED ONBOARDING")
         self.hasOnboarded = true
-        print(self.hasOnboarded)
         UserDefaults.standard.set(true, forKey: self.onboardingFinishedDefaults)
-        print(UserDefaults.standard.bool(forKey: self.onboardingFinishedDefaults))
     }
     
     func undoOnboardComplete() {

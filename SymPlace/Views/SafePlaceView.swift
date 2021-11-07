@@ -15,6 +15,8 @@ struct SafePlaceView: View {
     
     let safePlace: SafePlace
     
+    let dismiss: () -> Void
+    
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: true) {
@@ -32,7 +34,7 @@ struct SafePlaceView: View {
                         Text("PLACE, ME 04038")
                         
                         Button {
-                            print("LINK TO THE MAPS APP TO GET DIRECTIONS???")
+                            UIApplication.shared.openURL(URL(string: "http://maps.apple.com/?daddr=\(self.safePlace.latitude),\(self.safePlace.longitude)")!)
                         } label: {
                             HStack {
                                 Image(systemName: "location.fill")
@@ -56,7 +58,7 @@ struct SafePlaceView: View {
                         Text("Overall Rating")
                             .font(.system(size: 24))
                             .bold()
-                        OutOfFive(rating: .constant(3.0))
+                        OutOfFive(rating: .constant((safePlace.visibility! + safePlace.lgbtqPoints! + safePlace.bipocPoints! + safePlace.allieStaff!) / 4))
                         
                         Text("LGBTQ+ Rating")
                             .font(.system(size: 24))
@@ -72,14 +74,15 @@ struct SafePlaceView: View {
                             .font(.system(size: 24))
                             .bold()
                         OutOfFive(rating: .constant(safePlace.allieStaff!))
+                        
+                        Text("Visibility")
+                            .font(.system(size: 24))
+                            .bold()
+                        OutOfFive(rating: .constant(safePlace.allieStaff!))
                     }
                     
                     Button {
-                        print("ADD A NEW REVIEW HERE")
-                        print("RUNNING AFTER DISMISS")
-                        presentationMode.wrappedValue.dismiss()
-                        InformationManager.shared.presentReviewForPlace(self.safePlace, isUpdate: false)
-                        
+                        self.dismiss()
                     } label: {
                         Text("Been here? Add a review")
                             .foregroundColor(appLightGreen)

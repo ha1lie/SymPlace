@@ -22,22 +22,20 @@ class InformationManager: ObservableObject {
     
     func presentReviewForPlace(_ safePlace: SafePlace?, isUpdate upd: Bool) {
         DispatchQueue.main.async {
-            self.presentReviewSheet = true
+            self.safePlaceToReview = safePlace
             self.latitude = nil
             self.longitude = nil
             self.isUpdate = upd
-            DispatchQueue.main.asyncAfter(deadline: .now() + (upd ? 0 : 10)) {
-                print("PRESENTING IT")
-                self.safePlaceToReview = safePlace
+            DispatchQueue.main.asyncAfter(deadline: .now() + (upd ? 0 : 1)) {
+                self.presentReviewSheet = true
             }
         }
     }
     
-    func presentReviewForCoords(lat: Double, long: Double, isUpdate: Bool) {
+    func presentReviewForCoords(lat: Double, long: Double, isUpdate upd: Bool) {
         DispatchQueue.main.async {
-            print("SETTING IT TO SHOW")
             self.latitude = lat
-            self.isUpdate = isUpdate
+            self.isUpdate = upd
             self.longitude = long
             self.safePlaceToReview = nil
             self.presentReviewSheet = true

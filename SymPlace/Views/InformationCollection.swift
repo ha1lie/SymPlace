@@ -30,15 +30,17 @@ struct InformationCollectionView: View {
         NavigationView {
             ZStack {
                 ScrollView(.vertical, showsIndicators: true) {
-                    VStack {
-                        Text("Information")
+                    VStack(alignment: .leading) {
                         Text(self.safePlace?.name ?? "Name")
+                            .bold()
                         Text(self.safePlace?.addressLine ?? "Address Line")
                         
-                        Text("Tell us what you think")
                         Divider()
                             .padding(.horizontal)
                             .padding(.vertical, 6)
+                        
+                        Text("What are your thoughts on this establishment?")
+                            .foregroundColor(.gray)
                         
                         Group { // LGBTQ Group
                             VStack {
@@ -106,37 +108,41 @@ struct InformationCollectionView: View {
                             }.padding(.vertical)
                         }
                         
-                        Group { //Gender neutral bathrooms
-                            Divider()
-                                .padding(.horizontal)
-                                .padding(.vertical, 6)
-                            
-                            Text("Ameneties")
-                                .bold()
-                                .font(.title)
-                            
-                            Text("Available ameneties that might help others at this establishment")
-                            
-                            if showBathroom {
-                                Toggle(isOn: self.$genderNeutralBathroom, label: {Text("Gender Neutral Bathroom")})
-                                Button {
-                                    withAnimation {
-                                        self.showBathroom = false
-                                    }
-                                } label: {
-                                    Text("I am not sure")
-                                        .foregroundColor(appLightGreen)
-                                }.buttonStyle(PlainButtonStyle())
+                        if !InformationManager.shared.isUpdate! {
+                            Group { //Gender neutral bathrooms
+                                Divider()
+                                    .padding(.horizontal)
+                                    .padding(.vertical, 6)
+                                
+                                Text("Ameneties")
+                                    .bold()
+                                    .font(.title)
+                                
+                                Text("Available ameneties that might help others at this establishment")
+                                
+                                if showBathroom {
+                                    Toggle(isOn: self.$genderNeutralBathroom, label: {Text("Gender Neutral Bathroom")})
+                                    Button {
+                                        withAnimation {
+                                            self.showBathroom = false
+                                        }
+                                    } label: {
+                                        Text("I am not sure")
+                                            .foregroundColor(appLightGreen)
+                                    }.buttonStyle(PlainButtonStyle())
+                                }
                             }
                         }
                         
                         Button {
                             if self.safePlace != nil {
                                 self.loading = true
-                                if InformationManager.shared.isUpdate != nil && InformationManager.shared.isUpdate! {
+                                if InformationManager.shared.isUpdate ?? true {
+                                    print("MAKING AN UPDATE")
                                     LocationManager.shared.addReview(toID: self.safePlace!.id, withLGBTQScore: self.lgbtqRating, bipoc: self.bipocRating, visibility: self.visibilityRating, staff: self.staffRating)
                                 } else {
                                     //Is a new review
+                                    print("MAKING A NEW LOCATION")
                                     let newReview = SafePlace(name: self.safePlace?.name, atLat: self.safePlace!.latitude, andLong: self.safePlace!.longitude, addressLine: self.safePlace?.addressLine, reviewCount: 1, stateName: self.safePlace?.stateName, townName: self.safePlace?.townName ?? "", zipCode: self.safePlace?.zipCode, lgbtqPoints: self.lgbtqRating, bipocPoints: self.bipocRating, allieStaff: self.staffRating, visibility: self.visibilityRating, genderNeutralBathroom: self.genderNeutralBathroom, id: UUID().uuidString)
                                     
                                     LocationManager.shared.pushReviewToServer(newReview: newReview)
@@ -153,7 +159,7 @@ struct InformationCollectionView: View {
                                     .foregroundColor(self.safePlace != nil ? .white : .white.opacity(0.6))
                                     .padding()
                             }
-                        }
+                        }.padding(.vertical)
                         
                     }.navigationTitle("Leave a Review")
                         .padding()

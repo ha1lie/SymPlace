@@ -32,13 +32,13 @@ struct MainScreen: View {
                             .padding()
                     }
                     Spacer()
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 20)
-                            .frame(width: 40, height: 40)
-                            .foregroundColor(appOrange)
-                    }.onTapGesture {
-                        self.showProfilePage.toggle()
-                    }.padding()
+//                    ZStack {
+//                        RoundedRectangle(cornerRadius: 20)
+//                            .frame(width: 40, height: 40)
+//                            .foregroundColor(appOrange)
+//                    }.onTapGesture {
+//                        self.showProfilePage.toggle()
+//                    }.padding()
                     
                 }
                 Spacer()
@@ -59,14 +59,8 @@ struct MainScreen: View {
                     }.buttonStyle(PlainButtonStyle())
                         .padding()
                 }
-                if let featuredPlace = self.informationManager.presentedPlace {
-                    SafePlaceView(safePlace: featuredPlace)
-                        .padding()
-                }
             }
 
-        }.sheet(isPresented: self.$showProfilePage) {  } content: {
-            ProfileView()
         }
 
     }

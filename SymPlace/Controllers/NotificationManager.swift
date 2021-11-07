@@ -10,10 +10,12 @@ import UIKit
 import UserNotifications
 
 
-class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
+class NotificationManager: NSObject, UNUserNotificationCenterDelegate, ObservableObject {
     static let shared: NotificationManager = NotificationManager()
     
     private let defaults = UserDefaults.standard
+    
+    @Published var enabled: Bool = false
     
     private let defaultsRegisterSuccess: String = "successfullyGotToken"
 
@@ -52,22 +54,15 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
     }
     
     public func launchSetup() {
-        print("NOTIFICATION MANAGER LAUNCH SETUP RUNNING")
-        
+        self.enabled = true
         if !defaults.bool(forKey: self.defaultsRegisterSuccess) {
             //Has never gotten/registered the device ID
-            print("NEED TO REGISTER THIS DEVICE FOR PUSH NOTIFICATIONS")
-
-            
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { success, error in
-                print("SUCCESSFULLY REGISTERED: \(success)")
                 self.defaults.set(success, forKey: self.defaultsRegisterSuccess)
                 if success {
                     DispatchQueue.main.sync {
                         UIApplication.shared.registerForRemoteNotifications()
                     }
-                } else {
-                    print("NEED TO INFORM USER THEY NEED NOTIFICATIONS ENABLED")
                 }
             }
         }

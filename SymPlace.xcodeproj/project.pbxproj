@@ -31,6 +31,9 @@
 		26252A4F27375F6A00DC7BBC /* OutOfFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A4E27375F6A00DC7BBC /* OutOfFive.swift */; };
 		26252A512737778900DC7BBC /* SymSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A502737778900DC7BBC /* SymSlider.swift */; };
 		26252A542737AC5F00DC7BBC /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A532737AC5F00DC7BBC /* SwiftyJSON.swift */; };
+		26252A582737D63A00DC7BBC /* SheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A572737D63A00DC7BBC /* SheetManager.swift */; };
+		26252A5A2737F08300DC7BBC /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A592737F08300DC7BBC /* AppController.swift */; };
+		26252A5C2737F55300DC7BBC /* AboutInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A5B2737F55300DC7BBC /* AboutInformationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,9 @@
 		26252A4E27375F6A00DC7BBC /* OutOfFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutOfFive.swift; sourceTree = "<group>"; };
 		26252A502737778900DC7BBC /* SymSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymSlider.swift; sourceTree = "<group>"; };
 		26252A532737AC5F00DC7BBC /* SwiftyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		26252A572737D63A00DC7BBC /* SheetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetManager.swift; sourceTree = "<group>"; };
+		26252A592737F08300DC7BBC /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
+		26252A5B2737F55300DC7BBC /* AboutInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInformationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,7 @@
 		26252A1C2736E37400DC7BBC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				26252A592737F08300DC7BBC /* AppController.swift */,
 				26252A0D2736E34800DC7BBC /* SymPlaceApp.swift */,
 				26252A2A2736E6E200DC7BBC /* Users */,
 				26252A1F2736E38A00DC7BBC /* LocationManager.swift */,
@@ -135,6 +142,7 @@
 				26252A4527374B9C00DC7BBC /* SafePlace.swift */,
 				26252A4A2737522900DC7BBC /* InformationManager.swift */,
 				26252A532737AC5F00DC7BBC /* SwiftyJSON.swift */,
+				26252A572737D63A00DC7BBC /* SheetManager.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -154,6 +162,7 @@
 				26252A342736EE9500DC7BBC /* OnboardingScreen.swift */,
 				26252A322736EE8A00DC7BBC /* NewUserScreen.swift */,
 				26252A382736F58400DC7BBC /* ProfileView.swift */,
+				26252A5B2737F55300DC7BBC /* AboutInformationView.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -241,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26252A582737D63A00DC7BBC /* SheetManager.swift in Sources */,
 				26252A332736EE8A00DC7BBC /* NewUserScreen.swift in Sources */,
 				26252A312736EE8200DC7BBC /* MainScreen.swift in Sources */,
 				26252A202736E38A00DC7BBC /* LocationManager.swift in Sources */,
@@ -251,6 +261,7 @@
 				26252A372736EFEA00DC7BBC /* OnboardingController.swift in Sources */,
 				26252A1E2736E38200DC7BBC /* UserManager.swift in Sources */,
 				26252A3E2736F81400DC7BBC /* Colors.swift in Sources */,
+				26252A5A2737F08300DC7BBC /* AppController.swift in Sources */,
 				26252A102736E34800DC7BBC /* ContentView.swift in Sources */,
 				26252A352736EE9500DC7BBC /* OnboardingScreen.swift in Sources */,
 				26252A422737037E00DC7BBC /* InformationCollection.swift in Sources */,
@@ -258,6 +269,7 @@
 				26252A512737778900DC7BBC /* SymSlider.swift in Sources */,
 				26252A4B2737522900DC7BBC /* InformationManager.swift in Sources */,
 				26252A4D2737548600DC7BBC /* SafePlaceView.swift in Sources */,
+				26252A5C2737F55300DC7BBC /* AboutInformationView.swift in Sources */,
 				26252A392736F58400DC7BBC /* ProfileView.swift in Sources */,
 				26252A0E2736E34800DC7BBC /* SymPlaceApp.swift in Sources */,
 				26252A4627374B9C00DC7BBC /* SafePlace.swift in Sources */,

@@ -60,6 +60,7 @@ struct NewUserScreen: View {
                             Text("Why do we ask for this information?")
                         }.foregroundColor(.gray)
                     }.buttonStyle(PlainButtonStyle())
+                        .padding(.vertical, 4)
                     
                     Divider()
                         .padding(.horizontal)
@@ -72,7 +73,7 @@ struct NewUserScreen: View {
                             Text("Help us learn what spaces you like")
                                 .foregroundColor(.gray)
                             
-                            SymTextField(input: self.$name, imageName: "person.fill", placeholder: "Name")
+                            SymTextField(input: self.$name, imageName: "person.fill", placeholder: "First Name")
                             SymTextField(input: self.$age, imageName: "calendar", placeholder: "Age")
                             SymTextField(input: self.$gender, imageName: "face.smiling.fill", placeholder: "Gender")
                             SymTextField(input: self.$sexuality, imageName: "flag.fill", placeholder: "Sexuality")
@@ -136,7 +137,7 @@ struct NewUserScreen: View {
             }.sheet(isPresented: self.$showWhy) {
                 print("GOT RID OF THE INFORMATION SHEET")
             } content: {
-                InformationCollectionView()
+                AboutInformationView()
             }
             
             if self.isLoading {

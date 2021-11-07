@@ -20,6 +20,8 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     @Published var isLoading: Bool = false
     
+    @Published var enabled: Bool = false
+    
     @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(0), longitude: CLLocationDegrees(0)), span: MKCoordinateSpan(latitudeDelta: CLLocationDegrees(0.01), longitudeDelta: CLLocationDegrees(0.01))) {
         didSet {
             self.isLoading = true
@@ -35,11 +37,13 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     private var manager = CLLocationManager()
     
+    public func requestAccess() {
+        self.manager.requestAlwaysAuthorization()
+    }
+    
     private func updateReviews(forRegion reg: MKCoordinateRegion) {
         DispatchQueue(label: "backgroundWaiting").asyncAfter(deadline: .now() + 1) {
             if reg.center.longitude == self.region.center.longitude && reg.center.latitude == self.region.center.latitude && reg.span.longitudeDelta == self.region.span.longitudeDelta && reg.span.latitudeDelta == self.region.span.latitudeDelta {
-                //has not moved in time
-                print("MAKE THE REQUEST TO UPDATE IT")
                 
                 let startLong = reg.center.longitude - reg.span.longitudeDelta
                 let topLong = reg.center.longitude + reg.span.longitudeDelta
@@ -90,6 +94,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     public func pushReviewToServer(newReview: SafePlace) {
+        self.viewableLocations.append(newReview)
         let postReviewURL = URL(string: "https://api.halz.dev/safe-places/new-review")
         
         var newReviewReq = URLRequest(url: postReviewURL!)
@@ -118,9 +123,13 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         //"/safe-places/update-review/:id/:lgbtqPoints/:allieStaff/:bipocPoints/:visibility"
         
         let updateURL = URL(string: "https://api.halz.dev/safe-places/update-review/\(id)/\(lgbtq)/\(staff)/\(bipoc)/\(visibility)")
+        print("UPDATING AT \(updateURL?.absoluteString)")
         
-        URLSession.shared.dataTask(with: updateURL!).resume()
-        print("SHOULD HAVE CALLED THE UPDATE ROUTE")
+//        URLSession.shared.dataTask(with: updateURL!).resume()
+        
+        URLSession.shared.dataTask(with: URLRequest(url: updateURL!)) { _, _, _ in
+            print("UPDATED")
+        }.resume()
     }
     
     func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
@@ -134,10 +143,12 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             for ll in locations {
                 if (ll.long + 0.0001 >= loc.long || ll.long - 0.0001 <= loc.long) && (ll.lat + 0.0001 >= loc.lat || ll.lat - 0.0001 <= loc.lat) {
                     var finLoc = Location(lat: ll.lat, long: ll.long, confidence: ll.confidence + loc.confidence)
-//                    if finLoc.confidence >= 3 {
-//                        //The visit has been made at least 3 times
-//                        NotificationManager.shared.sendLocalNotification(title: "SymPlace - Suggested Location", body: "We see you visit \(visit.coordinate.longitude) often! Do you want to leave a review?")
-//                    }
+                    if finLoc.confidence >= 3 {
+                        //The visit has been made at least 3 times
+                        self.nameFromLocation(loc) { placeName in
+                            NotificationManager.shared.sendLocalNotification(title: "SymPlace - Suggested Location", body: "We see you visit \(placeName) often! Do you want to leave a review?", location: loc)
+                        }
+                    }
                     newLocs.append(finLoc)
                     didAppend = true
                 } else {
@@ -150,9 +161,6 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
         UserDefaults.standard.set(try? JSONEncoder().encode(newLocs), forKey: "visitTracking")
         
-        self.nameFromLocation(loc) { placeName in
-            NotificationManager.shared.sendLocalNotification(title: "SymPlace - Suggested Location", body: "We see you visit \(placeName) often! Do you want to leave a review?", location: loc)
-        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
