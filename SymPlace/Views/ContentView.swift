@@ -11,22 +11,25 @@ struct ContentView: View {
     
     @ObservedObject var onboardController: OnboardingController = .shared
     @ObservedObject var userManager: UserManager = .shared
+    @ObservedObject var informationManager: InformationManager = .shared
+    @ObservedObject var locationManager: LocationManager = .shared
     
     var body: some View {
         if self.onboardController.hasOnboarded {
             if self.userManager.currentUser == nil {
                 NewUserScreen()
             } else {
-                MainScreen()
+                VStack {
+                    MainScreen()
+                }.sheet(isPresented: $informationManager.presentReviewSheet) {
+                    print("DISMISS THE REVIEW SHEET")
+                } content: {
+                    InformationCollectionView()
+                }
+
             }
         } else {
             OnboardingScreen()
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

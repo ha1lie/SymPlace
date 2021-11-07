@@ -18,8 +18,37 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
     private let defaultsRegisterSuccess: String = "successfullyGotToken"
 
     
-    func getToken() {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
+        let lat = UserDefaults.standard.double(forKey: "notificationLat")
+        let long = UserDefaults.standard.double(forKey: "notificationLong")
+        if lat != 0 && long != 0 {
+            print("OPENING NOTIFICATION FOR THE OPENER THING")
+            InformationManager.shared.presentReviewForCoords(lat: lat, long: long, isUpdate: false)
+        }
+    }
+    
+    public func sendLocalNotification(title: String, body: String, location: Location? = nil) {
+        let notification = UNMutableNotificationContent()
         
+        notification.title = title
+        notification.body = body
+        
+        
+        if location != nil {
+            UserDefaults.standard.set(location!.lat, forKey: "notificationLat")
+            UserDefaults.standard.set(location!.long, forKey: "notificationLong")
+        }
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5,
+                                                            repeats: false)
+        let request = UNNotificationRequest(identifier: "locationSuggestion",
+                                            content: notification,
+                                            trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { error in
+            print("SENDING NOTIFICATION GAVE")
+            print("ERROR: \(error.debugDescription)")
+        }
     }
     
     public func launchSetup() {

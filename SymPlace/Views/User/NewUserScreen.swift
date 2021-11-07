@@ -9,13 +9,13 @@ import SwiftUI
 
 struct NewUserScreen: View {
     
-    @State var name: String = "Hallie"
-    @State var age: String = "17"
-    @State var gender: String = "Trans female"
-    @State var state: String = "New York"
-    @State var city: String = "Rochester"
-    @State var race: String = "White"
-    @State var sexuality: String = "Pansexual"
+    @State var name: String = ""
+    @State var age: String = ""
+    @State var gender: String = ""
+    @State var state: String = ""
+    @State var city: String = ""
+    @State var race: String = ""
+    @State var sexuality: String = ""
     
     @State var isLoading: Bool = false
     

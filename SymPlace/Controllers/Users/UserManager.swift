@@ -32,11 +32,11 @@ class UserManager: ObservableObject {
             print("URL SESSION RESPONSE")
             guard error == nil else {
                 print("COULDNT MAKE NEW USER ON SERVER")
-                print("ERROR: \(error)")
+                print("ERROR: \(error.debugDescription)")
                 return
             }
             
-            guard let data = data else {
+            guard let _ = data else {
                 print("DIDNT RETURN ANY DATA")
                 return
             }
@@ -47,6 +47,9 @@ class UserManager: ObservableObject {
         print("DID THE SERVER THING")
         
         //Set the current user in the userdefaults
+        
+        defaults.set(try? JSONEncoder().encode(user), forKey: self.appUserDefaults)
+        
         //Set the current user for this structure
         DispatchQueue.main.async {
             self.currentUser = user
@@ -63,5 +66,10 @@ class UserManager: ObservableObject {
     
     public func launchSetup() {
         print("USER MANAGER LAUNCH SETUP RUNNING")
+        
+        if let UDUsr = defaults.data(forKey: self.appUserDefaults) {
+            self.currentUser = try? JSONDecoder().decode(User.self, from: UDUsr)
+        }
+        
     }
 }

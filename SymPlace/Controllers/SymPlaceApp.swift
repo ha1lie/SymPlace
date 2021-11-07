@@ -22,8 +22,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     private let defaultsRegisterSuccess: String = "successfullyGotToken"
     
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        
         UserManager.shared.launchSetup()
         LocationManager.shared.launchSetup()
         NotificationManager.shared.launchSetup()
@@ -39,10 +40,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         }
         let token = tokenParts.joined()
         UserDefaults.standard.set(token, forKey: "deviceTokenToSendToServer")
-        print("Device Token: \(token)")
-        let bundleID = Bundle.main.bundleIdentifier;
-        print("Bundle ID: \(token) \(bundleID)");
-        
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {

@@ -24,6 +24,13 @@
 		26252A3E2736F81400DC7BBC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A3D2736F81400DC7BBC /* Colors.swift */; };
 		26252A422737037E00DC7BBC /* InformationCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A412737037E00DC7BBC /* InformationCollection.swift */; };
 		26252A44273705FA00DC7BBC /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A43273705FA00DC7BBC /* Loader.swift */; };
+		26252A4627374B9C00DC7BBC /* SafePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A4527374B9C00DC7BBC /* SafePlace.swift */; };
+		26252A482737519000DC7BBC /* SafePlacePin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A472737519000DC7BBC /* SafePlacePin.swift */; };
+		26252A4B2737522900DC7BBC /* InformationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A4A2737522900DC7BBC /* InformationManager.swift */; };
+		26252A4D2737548600DC7BBC /* SafePlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A4C2737548600DC7BBC /* SafePlaceView.swift */; };
+		26252A4F27375F6A00DC7BBC /* OutOfFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A4E27375F6A00DC7BBC /* OutOfFive.swift */; };
+		26252A512737778900DC7BBC /* SymSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A502737778900DC7BBC /* SymSlider.swift */; };
+		26252A542737AC5F00DC7BBC /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26252A532737AC5F00DC7BBC /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +54,13 @@
 		26252A3D2736F81400DC7BBC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		26252A412737037E00DC7BBC /* InformationCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCollection.swift; sourceTree = "<group>"; };
 		26252A43273705FA00DC7BBC /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		26252A4527374B9C00DC7BBC /* SafePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafePlace.swift; sourceTree = "<group>"; };
+		26252A472737519000DC7BBC /* SafePlacePin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafePlacePin.swift; sourceTree = "<group>"; };
+		26252A4A2737522900DC7BBC /* InformationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationManager.swift; sourceTree = "<group>"; };
+		26252A4C2737548600DC7BBC /* SafePlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafePlaceView.swift; sourceTree = "<group>"; };
+		26252A4E27375F6A00DC7BBC /* OutOfFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutOfFive.swift; sourceTree = "<group>"; };
+		26252A502737778900DC7BBC /* SymSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymSlider.swift; sourceTree = "<group>"; };
+		26252A532737AC5F00DC7BBC /* SwiftyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +117,9 @@
 				26252A3A2736F75A00DC7BBC /* Utilities */,
 				26252A2F2736EE7500DC7BBC /* User */,
 				26252A0F2736E34800DC7BBC /* ContentView.swift */,
+				26252A412737037E00DC7BBC /* InformationCollection.swift */,
 				26252A302736EE8200DC7BBC /* MainScreen.swift */,
-				26252A342736EE9500DC7BBC /* OnboardingScreen.swift */,
+				26252A4C2737548600DC7BBC /* SafePlaceView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,6 +132,9 @@
 				26252A1F2736E38A00DC7BBC /* LocationManager.swift */,
 				26252A2D2736EB8100DC7BBC /* NotificationManager.swift */,
 				26252A362736EFEA00DC7BBC /* OnboardingController.swift */,
+				26252A4527374B9C00DC7BBC /* SafePlace.swift */,
+				26252A4A2737522900DC7BBC /* InformationManager.swift */,
+				26252A532737AC5F00DC7BBC /* SwiftyJSON.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -133,9 +151,9 @@
 		26252A2F2736EE7500DC7BBC /* User */ = {
 			isa = PBXGroup;
 			children = (
+				26252A342736EE9500DC7BBC /* OnboardingScreen.swift */,
 				26252A322736EE8A00DC7BBC /* NewUserScreen.swift */,
 				26252A382736F58400DC7BBC /* ProfileView.swift */,
-				26252A412737037E00DC7BBC /* InformationCollection.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -146,6 +164,9 @@
 				26252A3B2736F76F00DC7BBC /* SymTextField.swift */,
 				26252A3D2736F81400DC7BBC /* Colors.swift */,
 				26252A43273705FA00DC7BBC /* Loader.swift */,
+				26252A472737519000DC7BBC /* SafePlacePin.swift */,
+				26252A4E27375F6A00DC7BBC /* OutOfFive.swift */,
+				26252A502737778900DC7BBC /* SymSlider.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -223,8 +244,10 @@
 				26252A332736EE8A00DC7BBC /* NewUserScreen.swift in Sources */,
 				26252A312736EE8200DC7BBC /* MainScreen.swift in Sources */,
 				26252A202736E38A00DC7BBC /* LocationManager.swift in Sources */,
+				26252A542737AC5F00DC7BBC /* SwiftyJSON.swift in Sources */,
 				26252A2E2736EB8100DC7BBC /* NotificationManager.swift in Sources */,
 				26252A3C2736F76F00DC7BBC /* SymTextField.swift in Sources */,
+				26252A4F27375F6A00DC7BBC /* OutOfFive.swift in Sources */,
 				26252A372736EFEA00DC7BBC /* OnboardingController.swift in Sources */,
 				26252A1E2736E38200DC7BBC /* UserManager.swift in Sources */,
 				26252A3E2736F81400DC7BBC /* Colors.swift in Sources */,
@@ -232,9 +255,14 @@
 				26252A352736EE9500DC7BBC /* OnboardingScreen.swift in Sources */,
 				26252A422737037E00DC7BBC /* InformationCollection.swift in Sources */,
 				26252A222736E6BD00DC7BBC /* User.swift in Sources */,
+				26252A512737778900DC7BBC /* SymSlider.swift in Sources */,
+				26252A4B2737522900DC7BBC /* InformationManager.swift in Sources */,
+				26252A4D2737548600DC7BBC /* SafePlaceView.swift in Sources */,
 				26252A392736F58400DC7BBC /* ProfileView.swift in Sources */,
 				26252A0E2736E34800DC7BBC /* SymPlaceApp.swift in Sources */,
+				26252A4627374B9C00DC7BBC /* SafePlace.swift in Sources */,
 				26252A44273705FA00DC7BBC /* Loader.swift in Sources */,
+				26252A482737519000DC7BBC /* SafePlacePin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,11 +398,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SymPlace/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "SymPlace caches your often visited locations on device, but needs to keep track of them";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "SymPlace needs your location to cache safe places";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -384,7 +415,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -401,11 +432,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SymPlace/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "SymPlace caches your often visited locations on device, but needs to keep track of them";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "SymPlace needs your location to cache safe places";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -415,7 +449,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
