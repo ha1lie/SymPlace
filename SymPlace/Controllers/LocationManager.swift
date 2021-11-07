@@ -146,6 +146,8 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
                     if finLoc.confidence >= 3 {
                         //The visit has been made at least 3 times
                         self.nameFromLocation(loc) { placeName in
+                            UserDefaults.standard.set(loc.lat, forKey: "notificationLat")
+                            UserDefaults.standard.set(loc.long, forKey: "notificationLong")
                             NotificationManager.shared.sendLocalNotification(title: "SymPlace - Suggested Location", body: "We see you visit \(placeName) often! Do you want to leave a review?", location: loc)
                         }
                     }
@@ -160,7 +162,6 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             newLocs.append(loc)
         }
         UserDefaults.standard.set(try? JSONEncoder().encode(newLocs), forKey: "visitTracking")
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
